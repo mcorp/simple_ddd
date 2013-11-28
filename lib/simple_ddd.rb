@@ -56,5 +56,6 @@ class SimpleDDD
         f.write('[' + array.join(',') + ']')
       end
     end
+    true
   end
 end
