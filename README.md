@@ -1,7 +1,7 @@
 Simple DDD
 ==========
 
-Serviço simples para responder o DDD das cidades via jsonp
+API simples com os DDDs das cidades do Brasil
 
 Criando os arquivos da API
 ==========================
@@ -12,8 +12,6 @@ bin/build_api
 cd site
 jekyll serve -P 3000
 ```
-
-http://mcorp.github.io/simple_ddd
 
 Consultando a API
 =================================
