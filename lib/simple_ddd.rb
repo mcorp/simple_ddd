@@ -16,7 +16,7 @@ class SimpleDDD
   autoload :DownloadAndParse, 'simple_ddd/download_and_parse'
 
   def jekyll_home
-    @jekyll_home ||= File.join(BaseDir,'site/brasil')
+    @jekyll_home ||= File.join(BaseDir,'site/br')
   end
 
   def file_name(uf = nil, city = nil)
@@ -27,11 +27,11 @@ class SimpleDDD
     else
       file = File.join(jekyll_home, uf, city)
     end
-    file + '.json'
+    file
   end
 
   def file_name_ddd(uf, city)
-    File.join(jekyll_home, uf, city, 'ddd.json')
+    File.join(jekyll_home, uf, city, 'ddd')
   end
 
   # /brasil/pr.json
@@ -44,16 +44,25 @@ class SimpleDDD
       FileUtils.mkdir_p(File.join(jekyll_home, item[:parameter_uf], item[:parameter_city]))
       hash[file_name] << item.to_json
       hash[file_name(item[:parameter_uf])] << item.to_json
-      File.open(file_name(item[:parameter_uf], item[:parameter_city]), 'w+') do |f|
+      File.open(file_name(item[:parameter_uf], item[:parameter_city]) + '.json', 'w+') do |f|
         f.write(item.to_json)
       end
-      File.open(file_name_ddd(item[:parameter_uf], item[:parameter_city]), 'w+') do |f|
+      File.open(file_name_ddd(item[:parameter_uf], item[:parameter_city]) + '.json', 'w+') do |f|
         f.write(item[:area_code].to_s)
+      end
+      File.open(file_name(item[:parameter_uf], item[:parameter_city]) + '.jsonp', 'w+') do |f|
+        f.write('simpleDDDCallback(' + item.to_json + ');')
+      end
+      File.open(file_name_ddd(item[:parameter_uf], item[:parameter_city]) + '.jsonp', 'w+') do |f|
+        f.write('simpleDDDCallback(' + item[:area_code].to_s + ');')
       end
     end
     hash.each do |file, array|
-      File.open(file, 'w+') do |f|
+      File.open(file + '.json', 'w+') do |f|
         f.write('[' + array.join(',') + ']')
+      end
+      File.open(file + '.jsonp', 'w+') do |f|
+        f.write('simpleDDDCallback([' + array.join(',') + ']);')
       end
     end
     true
