@@ -19,20 +19,20 @@ Consultando a API
 =================================
 
 ```
-curl http://mcorp.github.io/simple_ddd/br.json
-curl http://mcorp.github.io/simple_ddd/br/pr.json
-curl http://mcorp.github.io/simple_ddd/br/pr/curitiba.json
-curl http://mcorp.github.io/simple_ddd/br/pr/curitiba/ddd.json
-curl http://mcorp.github.io/simple_ddd/br/pr/curitiba/ddd.json
-curl http://mcorp.github.io/simple_ddd/br/to/pau-d-arco/ddd.json
+curl http://simple-ddd.mcorp.ws/br.json
+curl http://simple-ddd.mcorp.ws/br/pr.json
+curl http://simple-ddd.mcorp.ws/br/pr/curitiba.json
+curl http://simple-ddd.mcorp.ws/br/pr/curitiba/ddd.json
+curl http://simple-ddd.mcorp.ws/br/pr/curitiba/ddd.json
+curl http://simple-ddd.mcorp.ws/br/to/pau-d-arco/ddd.json
 ```
 
 Consultando a API via JQuery
 ==============================================
 
 ```
-$.ajax({ url:'http://mcorp.github.io/simple_ddd/br/pr/curitiba/ddd.jsonp', dataType:'jsonp', jsonpCallback: "simpleDDDCallback", cache: true}).done(function(t){ console.log(t); } )
-$.ajax({ url:'http://mcorp.github.io/simple_ddd/br/sp/santa-barbara-d-oeste.jsonp', dataType:'jsonp', jsonpCallback: "simpleDDDCallback", cache: true}).done(function(t){ console.log(t); } )
+$.ajax({ url:'http://simple-ddd.mcorp.ws/br/pr/curitiba/ddd.jsonp', dataType:'jsonp', jsonpCallback: "simpleDDDCallback", cache: true}).done(function(t){ console.log(t); } )
+$.ajax({ url:'http://simple-ddd.mcorp.ws/br/sp/santa-barbara-d-oeste.jsonp', dataType:'jsonp', jsonpCallback: "simpleDDDCallback", cache: true}).done(function(t){ console.log(t); } )
 ```
 
 Consultando a API (desenvolvimento)
