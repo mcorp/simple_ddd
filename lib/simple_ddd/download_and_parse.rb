@@ -4,15 +4,15 @@ class SimpleDDD::DownloadAndParse
   end
 
   def parsed_list
-    @parsed_list ||= Normalizer.new(list).normalize
+    @parsed_list ||= SimpleDDD::Normalizer.new(list).normalize
   end
 
   def downloader
-    @downloader ||= Downloader.new
+    @downloader ||= SimpleDDD::Downloader.new
   end
 
   def parser
-    ParseAnatelPDF
+    SimpleDDD::ParseAnatelPDF
   end
 
   def parse(reader)
