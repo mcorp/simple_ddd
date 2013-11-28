@@ -17,5 +17,6 @@ tmp
 _yardoc
 doc/
 *.json
+*.jsonp
 sites/_site
 *.orig
