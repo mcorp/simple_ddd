@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require File.expand_path('../lib/simple_ddd', File.dirname(__FILE__))
+
+s = SimpleDDD.new
+s.build_api
