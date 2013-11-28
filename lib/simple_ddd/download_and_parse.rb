@@ -1,5 +1,4 @@
-class DownloadAndParse
-
+class SimpleDDD::DownloadAndParse
   def list
     @list ||= []
   end

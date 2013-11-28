@@ -1,4 +1,4 @@
-class Normalizer
+class SimpleDDD::Normalizer
   attr_accessor :list
   def initialize(_list)
     @list = _list

@@ -1,4 +1,4 @@
-class ParseAnatelPDF
+class SimpleDDD::ParseAnatelPDF
   attr_accessor :reader
   def initialize(_reader)
     @reader = _reader

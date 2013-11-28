@@ -1,4 +1,4 @@
-class Downloader
+class SimpleDDD::Downloader
   def uf_list_anatel
     @uf_list ||= %w[acre alagoas amapa amazonas bahia ceara df es go ma mt ms mg pa pb pr pe pi rj rn rs ro rr sc sp se to]
   end
